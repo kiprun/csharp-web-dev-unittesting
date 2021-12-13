@@ -1,24 +1,24 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CarNS;
+using CarNS; // name of class NS = name space
 
 namespace CarTests
 {
-    [TestClass]
+    [TestClass]//Let's program know that this whole class is unit testing
     public class CarTests
     {
         //TODO: add emptyTest so we can configure our runtime environment (remove this test before pushing to your personal GitHub account)
         [TestMethod] // lets system know this method is a test case
-        public void EmptyTest()
+        public void EmptyTest() // always public 
         {
             Assert.AreEqual(10, 10, .001);  //(Expected, actual,delta(variance)
         }
         //TODO: constructor sets gasTankLevel properly
-        //[TestMethod]
-        //public void TestInitialGasTank()
-        //{
-        //    Car test_car = new Car("Toyota", "Prius", 10, 50);//calls Car method from Car Class
-        //    Assert.AreEqual(10, test_car.GasTankLevel, .001);
-        //}
+        [TestMethod]
+        public void TestInitialGasTank()
+        {
+            Car test_car = new Car("Toyota", "Prius", 10, 50);//calls Car method from Car Class
+            Assert.AreEqual(10, test_car.GasTankLevel, .001);
+        }
         Car test_car;
         [TestInitialize]
         public void CreateCarObject()
